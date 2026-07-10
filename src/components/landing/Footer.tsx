@@ -92,7 +92,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-primary transition"
               >
-                WhatsApp Renê
+                WhatsApp
               </a>
             </li>
             <li className="flex items-start gap-3">
@@ -109,7 +109,7 @@ export function Footer() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
         <p>© {new Date().getFullYear()} JR Escavações. Todos os direitos reservados.</p>
-        <p>Responsável: Renê</p>
+        <p>
       </div>
     </footer>
   );
