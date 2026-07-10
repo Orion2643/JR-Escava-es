@@ -86,13 +86,13 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <MessageCircle className="h-4 w-4 text-primary shrink-0" />
-              <a
+                <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition"
               >
-                WhatsApp Renê
+                WhatsApp
               </a>
             </li>
             <li className="flex items-start gap-3">
@@ -109,7 +109,7 @@ export function Footer() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
         <p>© {new Date().getFullYear()} JR Escavações. Todos os direitos reservados.</p>
-        <p>Responsável: Renê</p>
+        <p>Responsável: Equipe JR Escavações</p>
       </div>
     </footer>
   );

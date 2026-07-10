@@ -46,7 +46,7 @@ export function Solution() {
             className="mt-10 inline-flex items-center gap-2.5 rounded-2xl px-7 py-4 text-base btn-neon btn-neon-hover"
           >
             <MessageCircle className="h-5 w-5" />
-            Fale com o Renê
+            Entre em contato
           </a>
         </motion.div>
 

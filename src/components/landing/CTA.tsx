@@ -33,7 +33,7 @@ export function CTA() {
               Precisa de uma mini escavadeira?
             </h2>
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Fale agora com o <span className="text-white font-semibold">Renê</span> e receba
+              Fale agora conosco e receba
               seu orçamento no mesmo dia.
             </p>
 
