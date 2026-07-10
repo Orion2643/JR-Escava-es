@@ -7,7 +7,7 @@ const items = [
   { icon: Clock, title: "Atendimento rápido", desc: "Retorno ágil e mobilização eficiente para começar sem espera." },
   { icon: Wallet, title: "Excelente custo-benefício", desc: "Preço justo, produtividade alta e economia real na obra." },
   { icon: ShieldCheck, title: "Compromisso com qualidade", desc: "Padrão técnico rigoroso do primeiro contato à entrega final." },
-  { icon: HeartHandshake, title: "Atendimento personalizado", desc: "Cada obra recebe atenção direta do responsável, o Renê." },
+  { icon: HeartHandshake, title: "Atendimento personalizado", desc: "Cada obra recebe atenção direta do responsável." },
 ];
 
 export function Differentials() {
