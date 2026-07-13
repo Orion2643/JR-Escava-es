@@ -59,9 +59,9 @@ const images = [
   },
   {
     src: obra8,
-    title: "Nivelamento de terreno",
-    description: "Regularização do solo para deixar a área pronta para receber a obra.",
-    alt: "Terreno nivelado com mini escavadeira CAT em operação",
+    title: "Escavação de tanques",
+    description: "Escavação de tanques com precisão e acabamento profissional.",
+    alt: "Escavação de tanque realizada com mini escavadeira CAT",
   },
   {
     src: obra9,

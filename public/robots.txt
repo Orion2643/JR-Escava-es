@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://jr-escava-es.pages.dev/sitemap.xml
