@@ -4,7 +4,7 @@ import { WHATSAPP_URL } from "@/lib/contact";
 
 export function CTA() {
   return (
-    <section id="contato" className="relative py-24 sm:py-32">
+    <section id="contato" className="mobile-section relative py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-[2rem] neon-border p-10 sm:p-16 text-center">
           <div className="absolute inset-0 grid-lines opacity-18" />

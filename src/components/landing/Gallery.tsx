@@ -86,12 +86,18 @@ const images = [
 export function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const modalHistoryActive = useRef(false);
+  const activeIndexRef = useRef<number | null>(null);
+  const touchStartX = useRef<number | null>(null);
 
   const active = useMemo(() => (activeIndex === null ? null : images[activeIndex]), [activeIndex]);
 
   useEffect(() => {
+    activeIndexRef.current = activeIndex;
+  }, [activeIndex]);
+
+  useEffect(() => {
     const handlePopState = () => {
-      if (modalHistoryActive.current) {
+      if (modalHistoryActive.current || activeIndexRef.current !== null) {
         modalHistoryActive.current = false;
         setActiveIndex(null);
       }
@@ -127,8 +133,34 @@ export function Gallery() {
     setActiveIndex((current) => (current === null ? current : (current + 1) % images.length));
   };
 
+  useEffect(() => {
+    if (activeIndex === null) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") previousImage();
+      if (event.key === "ArrowRight") nextImage();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeIndex]);
+
+  const handleTouchStart = (event: React.TouchEvent) => {
+    touchStartX.current = event.touches[0]?.clientX ?? null;
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const endX = event.changedTouches[0]?.clientX ?? touchStartX.current;
+    const delta = endX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(delta) < 45) return;
+    if (delta > 0) previousImage();
+    else nextImage();
+  };
+
   return (
-    <section id="galeria" className="relative py-24 sm:py-32">
+    <section id="galeria" className="relative py-18 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
           <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
@@ -143,7 +175,7 @@ export function Gallery() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {images.map((img, i) => (
             <motion.button
               key={img.src}
@@ -153,7 +185,7 @@ export function Gallery() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.55, delay: (i % 4) * 0.07, ease: [0.2, 0.8, 0.2, 1] }}
               aria-label={`Ampliar imagem: ${img.title}`}
-              className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 text-left hover:border-primary/60 transition-all duration-300 hover:-translate-y-1"
+              className="gallery-card group relative aspect-[4/3] overflow-hidden rounded-2xl text-left transition-all duration-300 hover:-translate-y-1"
             >
               <img
                 src={img.src}
@@ -166,16 +198,14 @@ export function Gallery() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/25 to-transparent" />
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300"
-                style={{
-                  boxShadow: "inset 0 0 0 1px rgba(251,191,36,0.28), 0 0 34px rgba(245,179,1,0.16)",
-                }}
+                className="absolute inset-0 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition duration-300"
+                style={{ boxShadow: "inset 0 0 0 1px rgba(251,191,36,0.12)" }}
               />
               <div className="absolute top-3 right-3 grid h-9 w-9 place-items-center rounded-full glass opacity-0 group-hover:opacity-100 transition">
                 <ZoomIn className="h-4 w-4 text-primary" />
               </div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-base font-bold text-white drop-shadow">{img.title}</h3>
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-4">
+                <h3 className="font-display text-xl sm:text-base font-extrabold text-white drop-shadow">{img.title}</h3>
                 <p className="mt-1 line-clamp-2 text-xs sm:text-sm text-white/75 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">
                   {img.description}
                 </p>
@@ -188,7 +218,11 @@ export function Gallery() {
       <Dialog open={activeIndex !== null} onOpenChange={(open) => !open && closeImage()}>
         <DialogContent className="max-w-6xl border-0 bg-transparent p-0 shadow-none">
           {active && (
-            <div className="relative overflow-hidden rounded-2xl neon-border bg-background">
+            <div
+              className="relative overflow-hidden rounded-2xl neon-border bg-background"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
               <img
                 src={active.src}
                 alt={active.alt}
@@ -197,23 +231,29 @@ export function Gallery() {
 
               <button
                 type="button"
-                onClick={previousImage}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  previousImage();
+                }}
                 aria-label="Imagem anterior"
-                className="absolute left-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full glass hover:border-primary/60 transition"
+                className="absolute left-3 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 touch-manipulation place-items-center rounded-full glass hover:border-primary/60 transition active:scale-95"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
 
               <button
                 type="button"
-                onClick={nextImage}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  nextImage();
+                }}
                 aria-label="Próxima imagem"
-                className="absolute right-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full glass hover:border-primary/60 transition"
+                className="absolute right-3 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 touch-manipulation place-items-center rounded-full glass hover:border-primary/60 transition active:scale-95"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
 
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/85 to-transparent p-5 sm:p-6">
+              <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-background via-background/85 to-transparent p-5 sm:p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                   Foto {(activeIndex ?? 0) + 1} de {images.length}
                 </p>

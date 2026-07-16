@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle2, MessageCircle } from "lucide-react";
-import impactImg from "@/assets/impact-machine.jpg";
+import impactImg from "@/assets/impact-machine.png";
 import { WHATSAPP_URL } from "@/lib/contact";
 
 const points = [
@@ -12,8 +12,8 @@ const points = [
 
 export function Solution() {
   return (
-    <section className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+    <section className="mobile-section relative py-18 sm:py-32">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -45,7 +45,7 @@ export function Solution() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-2.5 rounded-2xl px-7 py-4 text-base btn-neon btn-neon-hover"
+            className="mobile-cta mt-8 sm:mt-10 inline-flex items-center gap-2.5 rounded-2xl px-7 py-4 text-base btn-neon btn-neon-hover"
           >
             <MessageCircle className="h-5 w-5" />
             Entre em contato
@@ -60,10 +60,10 @@ export function Solution() {
           className="relative"
         >
           <div
-            className="absolute -inset-6 rounded-[2rem] opacity-30 blur-3xl"
+            className="absolute -inset-4 sm:-inset-6 rounded-[2rem] opacity-10 sm:opacity-20 blur-2xl sm:blur-3xl"
             style={{ background: "var(--gradient-cta)" }}
           />
-          <div className="relative overflow-hidden rounded-3xl neon-border">
+          <div className="solution-media relative overflow-hidden rounded-3xl border border-primary/25 shadow-[0_0_16px_rgba(245,179,1,0.08)] sm:neon-border">
             <img
               src={impactImg}
               alt="Mini escavadeira em operação — solução ideal para obras residenciais e rurais"

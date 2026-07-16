@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import heroImg from "@/assets/hero-excavator.png";
 
 function NotFoundComponent() {
   return (
@@ -90,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "preload",
         as: "image",
-        href: "/src/assets/hero-excavator.jpg",
+        href: heroImg,
       },
     ],
   }),

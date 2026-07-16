@@ -10,6 +10,9 @@ import { ServiceArea } from "@/components/landing/ServiceArea";
 import { CTA } from "@/components/landing/CTA";
 import { Footer } from "@/components/landing/Footer";
 import { WhatsAppFloat } from "@/components/landing/WhatsAppFloat";
+import heroImg from "@/assets/hero-excavator.png";
+import logoImg from "@/assets/logo-jr-completo.png";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -36,10 +39,13 @@ export const Route = createFileRoute("/")({
           "Mini escavadeira, terraplanagem e preparação de terrenos. Precisão, agilidade e qualidade em toda a região de Capela do Alto.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:image", content: `${SITE_URL}${heroImg}` },
+      { property: "og:image:alt", content: "Mini escavadeira da JR Escavações em operação" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "JR Escavações" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${SITE_URL}${heroImg}` },
       {
         name: "twitter:title",
         content: "JR Escavações | Mini Escavadeira em Capela do Alto e Região",
@@ -50,15 +56,17 @@ export const Route = createFileRoute("/")({
           "Mini escavadeira, terraplanagem e preparação de terrenos em Capela do Alto e região.",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: SITE_URL }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "JR Escavações",
-          image: "/src/assets/hero-excavator.jpg",
+          name: SITE_NAME,
+          url: SITE_URL,
+          logo: `${SITE_URL}${logoImg}`,
+          image: `${SITE_URL}${heroImg}`,
           description:
             "Serviços com mini escavadeira: escavações, terraplanagem, abertura de valas, drenagem e preparação de terrenos.",
           telephone: "+55-15-99767-5629",
@@ -84,7 +92,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Service",
           serviceType: "Serviços com mini escavadeira",
-          provider: { "@type": "LocalBusiness", name: "JR Escavações" },
+          provider: { "@type": "LocalBusiness", name: SITE_NAME, url: SITE_URL },
           areaServed: "Capela do Alto, Sorocaba, Tatuí, Iperó, Araçoiaba da Serra",
           hasOfferCatalog: {
             "@type": "OfferCatalog",
@@ -112,7 +120,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          itemListElement: [{ "@type": "ListItem", position: 1, name: "Início", item: "/" }],
+          itemListElement: [{ "@type": "ListItem", position: 1, name: "Início", item: SITE_URL }],
         }),
       },
     ],

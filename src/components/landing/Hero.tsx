@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import heroImg from "@/assets/hero-excavator.jpg";
+import heroImg from "@/assets/hero-excavator.png";
 import logoJrCompleto from "@/assets/logo-jr-completo.png";
 import { MessageCircle, ArrowRight, CheckCircle2, MapPin } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/contact";
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
+    <section id="inicio" className="hero-section relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
       {/* Backgrounds */}
       <div className="absolute inset-0 blueprint opacity-[0.22] pointer-events-none" />
       <div
@@ -75,7 +75,7 @@ export function Hero() {
             e o compromisso de uma equipe que entrega no prazo.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="hero-actions mt-8 flex flex-wrap items-center gap-3">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -107,7 +107,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1], delay: 0.1 }}
-          className="relative lg:col-span-6"
+          className="hero-media relative lg:col-span-6"
         >
           <div
             className="absolute -inset-6 rounded-[2rem] opacity-28 blur-3xl"
@@ -136,19 +136,19 @@ export function Hero() {
               style={{ background: "linear-gradient(270deg, rgba(251,191,36,0.10), transparent)" }}
             />
 
-            {/* HUD overlay */}
-            <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between glass rounded-2xl px-5 py-3.5">
-              <div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            {/* HUD overlay compacto: preserva a leitura sem esconder a imagem */}
+            <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-background/72 px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.36)] backdrop-blur-md sm:bottom-5 sm:left-5 sm:right-5 sm:rounded-2xl sm:px-5 sm:py-3.5">
+              <div className="min-w-0">
+                <p className="text-[8px] uppercase tracking-[0.18em] text-muted-foreground sm:text-[10px] sm:tracking-[0.2em]">
                   Operação
                 </p>
-                <p className="font-display font-bold text-base">Mini Escavadeira</p>
+                <p className="truncate font-display text-sm font-bold sm:text-base">Mini Escavadeira</p>
               </div>
-              <div className="text-right">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+              <div className="shrink-0 border-l border-white/10 pl-3 text-right sm:pl-5">
+                <p className="text-[8px] uppercase tracking-[0.18em] text-muted-foreground sm:text-[10px] sm:tracking-[0.2em]">
                   Status
                 </p>
-                <p className="font-display font-bold text-primary flex items-center justify-end gap-1.5">
+                <p className="flex items-center justify-end gap-1.5 font-display text-sm font-bold text-primary sm:text-base">
                   <span className="h-2 w-2 rounded-full bg-primary animate-pulse-neon" />
                   Disponível
                 </p>

@@ -20,7 +20,7 @@ const pins = [
 
 export function ServiceArea() {
   return (
-    <section id="atendimento" className="relative py-24 sm:py-32 surface">
+    <section id="atendimento" className="mobile-section relative py-24 sm:py-32 surface">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         <div>
           <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
@@ -65,7 +65,7 @@ export function ServiceArea() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
-          className="relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden neon-border"
+          className="service-map relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden neon-border"
         >
           <div className="absolute inset-0 blueprint opacity-70" />
           <div

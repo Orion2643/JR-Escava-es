@@ -36,7 +36,7 @@ const items = [
 
 export function Differentials() {
   return (
-    <section id="diferenciais" className="relative py-24 sm:py-32">
+    <section id="diferenciais" className="mobile-section relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">Diferenciais</p>
@@ -55,7 +55,7 @@ export function Differentials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.55, delay: i * 0.06, ease: [0.2, 0.8, 0.2, 1] }}
-                className="group relative rounded-2xl p-7 surface-2 border border-white/[0.06] hover:border-gold/30 transition-all duration-300 hover:-translate-y-1"
+                className="mobile-card group relative rounded-2xl p-7 surface-2 border border-white/[0.06] hover:border-gold/30 transition-all duration-300 hover:-translate-y-1"
               >
                 <div
                   className="grid h-14 w-14 place-items-center rounded-xl mb-5"

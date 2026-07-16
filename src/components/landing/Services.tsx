@@ -66,7 +66,7 @@ const services: Service[] = [
 
 export function Services() {
   return (
-    <section id="servicos" className="relative py-24 sm:py-32 surface">
+    <section id="servicos" className="mobile-section relative py-24 sm:py-32 surface">
       <div className="absolute inset-0 blueprint opacity-20 pointer-events-none" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
@@ -92,7 +92,7 @@ export function Services() {
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.04, ease: [0.2, 0.8, 0.2, 1] }}
                 whileHover={{ y: -6 }}
-                className="group relative rounded-2xl p-6 border border-white/[0.06] surface-2 hover:border-primary/50 transition-all duration-300"
+                className="mobile-card group relative rounded-2xl p-6 border border-white/[0.06] surface-2 hover:border-primary/50 transition-all duration-300"
                 style={{ boxShadow: "0 20px 40px -20px rgba(0,0,0,0.5)" }}
               >
                 <div
