@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
@@ -85,8 +85,37 @@ const images = [
 
 export function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const modalHistoryActive = useRef(false);
 
   const active = useMemo(() => (activeIndex === null ? null : images[activeIndex]), [activeIndex]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      if (modalHistoryActive.current) {
+        modalHistoryActive.current = false;
+        setActiveIndex(null);
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const openImage = (index: number) => {
+    if (!modalHistoryActive.current) {
+      window.history.pushState({ jrGalleryModal: true }, "", window.location.href);
+      modalHistoryActive.current = true;
+    }
+    setActiveIndex(index);
+  };
+
+  const closeImage = () => {
+    if (modalHistoryActive.current) {
+      window.history.back();
+      return;
+    }
+    setActiveIndex(null);
+  };
 
   const previousImage = () => {
     setActiveIndex((current) =>
@@ -118,7 +147,7 @@ export function Gallery() {
           {images.map((img, i) => (
             <motion.button
               key={img.src}
-              onClick={() => setActiveIndex(i)}
+              onClick={() => openImage(i)}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
@@ -156,7 +185,7 @@ export function Gallery() {
         </div>
       </div>
 
-      <Dialog open={activeIndex !== null} onOpenChange={(open) => !open && setActiveIndex(null)}>
+      <Dialog open={activeIndex !== null} onOpenChange={(open) => !open && closeImage()}>
         <DialogContent className="max-w-6xl border-0 bg-transparent p-0 shadow-none">
           {active && (
             <div className="relative overflow-hidden rounded-2xl neon-border bg-background">

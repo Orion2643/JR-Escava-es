@@ -32,33 +32,33 @@
   --color-gold: var(--gold);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
-  --font-display: "Space Grotesk", "Manrope", "Inter", system-ui, sans-serif;
-  --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-sans: "Manrope", "Inter", system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.875rem;
 
   /* Palette */
-  --background: #05070b;
+  --background: #0c1118;
   --foreground: #ffffff;
-  --surface: #0b1220;
-  --surface-2: #111827;
+  --surface: #151d29;
+  --surface-2: #1b2533;
 
-  --card: #111827;
+  --card: #182230;
   --card-foreground: #ffffff;
 
-  --popover: #0b1220;
+  --popover: #151d29;
   --popover-foreground: #ffffff;
 
   --primary: #d99a00; /* dourado âmbar suave */
   --primary-foreground: #ffffff;
 
-  --secondary: #111827;
+  --secondary: #1b2533;
   --secondary-foreground: #ffffff;
 
-  --muted: #0b1220;
-  --muted-foreground: #d1d5db;
+  --muted: #151d29;
+  --muted-foreground: #d8dee8;
 
   --accent: #f5b301; /* dourado luminoso */
   --accent-foreground: #05070b;
@@ -76,8 +76,8 @@
   --gradient-hero:
     radial-gradient(ellipse 60% 50% at 15% 20%, rgba(245, 179, 1, 0.12), transparent 60%),
     radial-gradient(ellipse 50% 40% at 90% 80%, rgba(251, 191, 36, 0.045), transparent 60%),
-    linear-gradient(180deg, #05070b 0%, #05070b 100%);
-  --gradient-panel: linear-gradient(135deg, rgba(17, 24, 39, 0.85), rgba(11, 18, 32, 0.65));
+    linear-gradient(180deg, #0c1118 0%, #101722 52%, #0c1118 100%);
+  --gradient-panel: linear-gradient(135deg, rgba(27, 37, 51, 0.88), rgba(21, 29, 41, 0.72));
   --gradient-cta: linear-gradient(135deg, #d99a00 0%, #f5b301 100%);
   --gradient-gold-glow: linear-gradient(135deg, rgba(245, 179, 1, 0.14), rgba(251, 191, 36, 0.022));
   --shadow-neon: 0 0 0 1px rgba(251, 191, 36, 0.18), 0 16px 42px -22px rgba(245, 179, 1, 0.28);
@@ -85,7 +85,7 @@
 }
 
 .dark {
-  --background: #05070b;
+  --background: #0c1118;
   --foreground: #ffffff;
 }
 
@@ -109,8 +109,9 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.015em;
     font-weight: 800;
+    text-transform: none;
   }
   ::selection {
     background: rgba(245, 179, 1, 0.18);
@@ -126,7 +127,7 @@
 }
 
 @utility glass-header {
-  background: rgba(5, 7, 11, 0.72);
+  background: rgba(12, 17, 24, 0.82);
   backdrop-filter: blur(20px) saturate(160%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -296,6 +297,12 @@
   background: rgba(245, 179, 1, 0.8);
   box-shadow: 0 0 8px rgba(245, 179, 1, 0.28);
   animation: gold-particle-float 6s ease-in-out infinite;
+}
+
+
+/* Imagens institucionais mais claras, sem alterar a galeria */
+.site-machine-image {
+  filter: brightness(1.14) contrast(1.03) saturate(1.05);
 }
 
 @media (prefers-reduced-motion: reduce) {

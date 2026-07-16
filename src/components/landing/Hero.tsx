@@ -121,12 +121,12 @@ export function Hero() {
               height={1200}
               fetchPriority="high"
               decoding="async"
-              className="w-full h-auto object-cover animate-excavator-drift"
+              className="site-machine-image w-full h-auto object-cover animate-excavator-drift"
               initial={{ scale: 1.05 }}
               animate={{ scale: 1 }}
               transition={{ duration: 1.6, ease: "easeOut" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/12 to-transparent" />
             <div
               className="absolute inset-y-0 left-0 w-1/3 pointer-events-none"
               style={{ background: "linear-gradient(90deg, rgba(245,179,1,0.14), transparent)" }}

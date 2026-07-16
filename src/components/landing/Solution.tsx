@@ -60,7 +60,7 @@ export function Solution() {
           className="relative"
         >
           <div
-            className="absolute -inset-6 rounded-[2rem] opacity-60 blur-3xl"
+            className="absolute -inset-6 rounded-[2rem] opacity-30 blur-3xl"
             style={{ background: "var(--gradient-cta)" }}
           />
           <div className="relative overflow-hidden rounded-3xl neon-border">
@@ -71,9 +71,9 @@ export function Solution() {
               height={1200}
               loading="lazy"
               decoding="async"
-              className="w-full h-auto object-cover"
+              className="site-machine-image w-full h-auto object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-background/40" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-background/45 via-transparent to-background/15" />
             <div
               className="absolute inset-y-0 left-0 w-1/3 pointer-events-none"
               style={{ background: "linear-gradient(90deg, rgba(245,179,1,0.14), transparent)" }}
