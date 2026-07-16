@@ -13,12 +13,12 @@ export function Impact() {
     <section className="relative py-20 sm:py-24 surface">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-3xl neon-border">
-          <div className="absolute inset-0 grid-lines opacity-40" />
+          <div className="absolute inset-0 grid-lines opacity-24" />
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(135deg, rgba(11,18,32,0.9), rgba(17,24,39,0.9)), radial-gradient(ellipse at 30% 30%, rgba(37,99,235,0.25), transparent 60%)",
+                "linear-gradient(135deg, rgba(11,18,32,0.9), rgba(17,24,39,0.9)), radial-gradient(ellipse at 30% 30%, rgba(245,179,1,0.11), transparent 60%)",
             }}
           />
           <div className="relative grid grid-cols-2 md:grid-cols-4 gap-8 p-10 sm:p-14">
@@ -37,13 +37,17 @@ export function Impact() {
                     className="mx-auto grid h-16 w-16 place-items-center rounded-2xl mb-5"
                     style={{
                       background: "var(--gradient-cta)",
-                      boxShadow: "0 12px 40px -10px rgba(37,99,235,0.7)",
+                      boxShadow: "0 10px 28px -14px rgba(245,179,1,0.36)",
                     }}
                   >
                     <Icon className="h-8 w-8 text-white" />
                   </div>
-                  <p className="font-display text-2xl sm:text-3xl font-extrabold text-gradient">{s.label}</p>
-                  <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                  <p className="font-display text-2xl sm:text-3xl font-extrabold text-gradient">
+                    {s.label}
+                  </p>
+                  <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    {s.desc}
+                  </p>
                 </motion.div>
               );
             })}

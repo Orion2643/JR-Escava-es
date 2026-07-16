@@ -28,18 +28,13 @@ export function Header() {
         scrolled ? "glass-header py-3" : "py-5 bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 sm:px-6">
-        <a href="#inicio" className="flex items-center gap-2.5 shrink-0" aria-label="JR Escavações — Início">
-          <span
-            className="relative grid h-10 w-10 place-items-center rounded-lg overflow-hidden"
-            style={{ background: "var(--gradient-cta)" }}
-          >
-            <span className="font-display text-base font-black text-white tracking-tight">JR</span>
-            <span className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0" />
-          </span>
-          <span className="font-display text-lg font-bold tracking-tight">
-            JR <span className="text-primary">Escavações</span>
-          </span>
+      <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-6 px-4 sm:px-6 lg:grid-cols-[1fr_auto_1fr]">
+        <a
+          href="#inicio"
+          className="hidden lg:block justify-self-start text-sm font-semibold tracking-wide text-white/0"
+          aria-label="JR Escavações e Terraplanagem — Início"
+        >
+          JR Escavações
         </a>
 
         <nav className="hidden lg:flex items-center gap-8" aria-label="Menu principal">
@@ -58,7 +53,7 @@ export function Header() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm btn-neon btn-neon-hover"
+          className="hidden md:inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm btn-neon btn-neon-hover lg:justify-self-end"
         >
           <MessageCircle className="h-4 w-4" />
           WhatsApp
@@ -66,7 +61,7 @@ export function Header() {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden grid h-10 w-10 place-items-center rounded-lg glass"
+          className="lg:hidden col-start-2 grid h-10 w-10 place-items-center rounded-lg glass justify-self-end"
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
         >

@@ -86,10 +86,7 @@ const images = [
 export function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const active = useMemo(
-    () => (activeIndex === null ? null : images[activeIndex]),
-    [activeIndex],
-  );
+  const active = useMemo(() => (activeIndex === null ? null : images[activeIndex]), [activeIndex]);
 
   const previousImage = () => {
     setActiveIndex((current) =>
@@ -98,21 +95,22 @@ export function Gallery() {
   };
 
   const nextImage = () => {
-    setActiveIndex((current) =>
-      current === null ? current : (current + 1) % images.length,
-    );
+    setActiveIndex((current) => (current === null ? current : (current + 1) % images.length));
   };
 
   return (
     <section id="galeria" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-3xl">
-          <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">Obras realizadas</p>
+          <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
+            Obras realizadas
+          </p>
           <h2 className="mt-4 font-display text-4xl sm:text-6xl font-extrabold text-gradient leading-[0.95]">
             Veja a JR Escavações em ação
           </h2>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Serviços reais executados com mini escavadeira em terrenos, chácaras, residências e obras da região.
+            Serviços reais executados com mini escavadeira em terrenos, chácaras, residências e
+            obras da região.
           </p>
         </div>
 
@@ -140,7 +138,9 @@ export function Gallery() {
               <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/25 to-transparent" />
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300"
-                style={{ boxShadow: "inset 0 0 0 1px rgba(59,130,246,0.5), 0 0 60px rgba(37,99,235,0.35)" }}
+                style={{
+                  boxShadow: "inset 0 0 0 1px rgba(251,191,36,0.28), 0 0 34px rgba(245,179,1,0.16)",
+                }}
               />
               <div className="absolute top-3 right-3 grid h-9 w-9 place-items-center rounded-full glass opacity-0 group-hover:opacity-100 transition">
                 <ZoomIn className="h-4 w-4 text-primary" />
@@ -160,7 +160,11 @@ export function Gallery() {
         <DialogContent className="max-w-6xl border-0 bg-transparent p-0 shadow-none">
           {active && (
             <div className="relative overflow-hidden rounded-2xl neon-border bg-background">
-              <img src={active.src} alt={active.alt} className="max-h-[78vh] w-full object-contain bg-black" />
+              <img
+                src={active.src}
+                alt={active.alt}
+                className="max-h-[78vh] w-full object-contain bg-black"
+              />
 
               <button
                 type="button"
@@ -184,8 +188,12 @@ export function Gallery() {
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                   Foto {(activeIndex ?? 0) + 1} de {images.length}
                 </p>
-                <h3 className="mt-2 font-display text-2xl sm:text-3xl font-extrabold text-white">{active.title}</h3>
-                <p className="mt-1 max-w-2xl text-sm sm:text-base text-white/75">{active.description}</p>
+                <h3 className="mt-2 font-display text-2xl sm:text-3xl font-extrabold text-white">
+                  {active.title}
+                </h3>
+                <p className="mt-1 max-w-2xl text-sm sm:text-base text-white/75">
+                  {active.description}
+                </p>
               </div>
             </div>
           )}

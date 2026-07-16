@@ -20,14 +20,16 @@ export function Solution() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
         >
-          <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">Solução completa</p>
+          <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
+            Solução completa
+          </p>
           <h2 className="mt-4 font-display text-4xl sm:text-6xl font-extrabold text-gradient leading-[0.95]">
             A solução ideal para sua obra.
           </h2>
           <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-            Da abertura de valas à preparação de fundações, a mini escavadeira
-            entrega o que uma retroescavadeira não faz: precisão em espaço
-            reduzido, agilidade e um acabamento que valoriza o seu projeto.
+            Da abertura de valas à preparação de fundações, a mini escavadeira entrega o que uma
+            retroescavadeira não faz: precisão em espaço reduzido, agilidade e um acabamento que
+            valoriza o seu projeto.
           </p>
 
           <ul className="mt-8 space-y-3.5">
@@ -74,7 +76,7 @@ export function Solution() {
             <div className="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-background/40" />
             <div
               className="absolute inset-y-0 left-0 w-1/3 pointer-events-none"
-              style={{ background: "linear-gradient(90deg, rgba(37,99,235,0.35), transparent)" }}
+              style={{ background: "linear-gradient(90deg, rgba(245,179,1,0.14), transparent)" }}
             />
             <div className="absolute top-4 left-4 h-8 w-8 border-l-2 border-t-2 border-primary/70" />
             <div className="absolute bottom-4 right-4 h-8 w-8 border-r-2 border-b-2 border-primary/70" />

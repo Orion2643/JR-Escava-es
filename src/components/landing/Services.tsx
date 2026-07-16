@@ -1,23 +1,67 @@
 import { motion } from "framer-motion";
 import {
-  Shovel, Trees, Hammer, Layers, Sprout, Waves,
-  Mountain, Ruler, Building2, PipetteIcon,
+  Shovel,
+  Trees,
+  Hammer,
+  Layers,
+  Sprout,
+  Waves,
+  Mountain,
+  Ruler,
+  Building2,
+  PipetteIcon,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 type Service = { icon: LucideIcon; title: string; desc: string };
 
 const services: Service[] = [
-  { icon: Shovel, title: "Abertura de valas", desc: "Valas precisas para água, esgoto, elétrica e telecom." },
-  { icon: Trees, title: "Limpeza de terrenos", desc: "Remoção de vegetação, entulhos e preparação da área." },
-  { icon: Hammer, title: "Demolição leve", desc: "Demolição de muros, pisos e pequenas estruturas." },
-  { icon: Layers, title: "Preparação de terrenos", desc: "Regularização do solo para construção e projetos." },
-  { icon: Sprout, title: "Paisagismo e drenagem", desc: "Modelagem do terreno e solução para escoamento." },
-  { icon: Waves, title: "Escavação para piscinas", desc: "Buracos no formato ideal, sem danos ao entorno." },
+  {
+    icon: Shovel,
+    title: "Abertura de valas",
+    desc: "Valas precisas para água, esgoto, elétrica e telecom.",
+  },
+  {
+    icon: Trees,
+    title: "Limpeza de terrenos",
+    desc: "Remoção de vegetação, entulhos e preparação da área.",
+  },
+  {
+    icon: Hammer,
+    title: "Demolição leve",
+    desc: "Demolição de muros, pisos e pequenas estruturas.",
+  },
+  {
+    icon: Layers,
+    title: "Preparação de terrenos",
+    desc: "Regularização do solo para construção e projetos.",
+  },
+  {
+    icon: Sprout,
+    title: "Paisagismo e drenagem",
+    desc: "Modelagem do terreno e solução para escoamento.",
+  },
+  {
+    icon: Waves,
+    title: "Escavação para piscinas",
+    desc: "Buracos no formato ideal, sem danos ao entorno.",
+  },
   { icon: Mountain, title: "Terraplanagem", desc: "Cortes, aterros e nivelamento para obras." },
-  { icon: Ruler, title: "Nivelamento de terrenos", desc: "Superfície pronta para pisos, calçamento e construção." },
-  { icon: Building2, title: "Preparação para fundações", desc: "Escavação e regularização para bases estáveis." },
-  { icon: PipetteIcon, title: "Drenagem e tubulações", desc: "Instalação de tubos, caixas e sistemas de drenagem." },
+  {
+    icon: Ruler,
+    title: "Nivelamento de terrenos",
+    desc: "Superfície pronta para pisos, calçamento e construção.",
+  },
+  {
+    icon: Building2,
+    title: "Preparação para fundações",
+    desc: "Escavação e regularização para bases estáveis.",
+  },
+  {
+    icon: PipetteIcon,
+    title: "Drenagem e tubulações",
+    desc: "Instalação de tubos, caixas e sistemas de drenagem.",
+  },
 ];
 
 export function Services() {
@@ -26,7 +70,9 @@ export function Services() {
       <div className="absolute inset-0 blueprint opacity-20 pointer-events-none" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
-          <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">O que fazemos</p>
+          <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
+            O que fazemos
+          </p>
           <h2 className="mt-4 font-display text-4xl sm:text-6xl font-extrabold text-gradient leading-[0.95]">
             Serviços com Mini Escavadeira
           </h2>
@@ -51,13 +97,16 @@ export function Services() {
               >
                 <div
                   className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none"
-                  style={{ boxShadow: "0 0 0 1px rgba(59,130,246,0.4), 0 30px 60px -20px rgba(37,99,235,0.45)" }}
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(251,191,36,0.22), 0 22px 44px -24px rgba(245,179,1,0.24)",
+                  }}
                 />
                 <div
                   className="grid h-14 w-14 place-items-center rounded-xl mb-5 group-hover:scale-110 transition-transform duration-300"
                   style={{
-                    background: "var(--gradient-blue-glow)",
-                    border: "1px solid rgba(59,130,246,0.35)",
+                    background: "var(--gradient-gold-glow)",
+                    border: "1px solid rgba(251,191,36,0.20)",
                   }}
                 >
                   <Icon className="h-7 w-7 text-primary" />

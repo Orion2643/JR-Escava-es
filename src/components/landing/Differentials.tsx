@@ -2,12 +2,36 @@ import { motion } from "framer-motion";
 import { Cog, Crosshair, Clock, Wallet, ShieldCheck, HeartHandshake } from "lucide-react";
 
 const items = [
-  { icon: Cog, title: "Equipamentos modernos", desc: "Máquinas revisadas, com desempenho e segurança de alto padrão." },
-  { icon: Crosshair, title: "Execução precisa", desc: "Cortes limpos, nivelamento correto e acabamento profissional." },
-  { icon: Clock, title: "Atendimento rápido", desc: "Retorno ágil e mobilização eficiente para começar sem espera." },
-  { icon: Wallet, title: "Excelente custo-benefício", desc: "Preço justo, produtividade alta e economia real na obra." },
-  { icon: ShieldCheck, title: "Compromisso com qualidade", desc: "Padrão técnico rigoroso do primeiro contato à entrega final." },
-  { icon: HeartHandshake, title: "Atendimento personalizado", desc: "Cada obra recebe atenção direta do responsável." },
+  {
+    icon: Cog,
+    title: "Equipamentos modernos",
+    desc: "Máquinas revisadas, com desempenho e segurança de alto padrão.",
+  },
+  {
+    icon: Crosshair,
+    title: "Execução precisa",
+    desc: "Cortes limpos, nivelamento correto e acabamento profissional.",
+  },
+  {
+    icon: Clock,
+    title: "Atendimento rápido",
+    desc: "Retorno ágil e mobilização eficiente para começar sem espera.",
+  },
+  {
+    icon: Wallet,
+    title: "Excelente custo-benefício",
+    desc: "Preço justo, produtividade alta e economia real na obra.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Compromisso com qualidade",
+    desc: "Padrão técnico rigoroso do primeiro contato à entrega final.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Atendimento personalizado",
+    desc: "Cada obra recebe atenção direta do responsável.",
+  },
 ];
 
 export function Differentials() {
@@ -31,13 +55,14 @@ export function Differentials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.55, delay: i * 0.06, ease: [0.2, 0.8, 0.2, 1] }}
-                className="group relative rounded-2xl p-7 surface-2 border border-white/[0.06] hover:border-gold/50 transition-all duration-300 hover:-translate-y-1"
+                className="group relative rounded-2xl p-7 surface-2 border border-white/[0.06] hover:border-gold/30 transition-all duration-300 hover:-translate-y-1"
               >
                 <div
                   className="grid h-14 w-14 place-items-center rounded-xl mb-5"
                   style={{
-                    background: "linear-gradient(135deg, rgba(245,179,1,0.18), rgba(245,179,1,0.04))",
-                    border: "1px solid rgba(245,179,1,0.35)",
+                    background:
+                      "linear-gradient(135deg, rgba(245,179,1,0.10), rgba(245,179,1,0.02))",
+                    border: "1px solid rgba(245,179,1,0.20)",
                   }}
                 >
                   <Icon className="h-7 w-7 text-gold" />

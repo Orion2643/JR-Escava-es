@@ -26,7 +26,10 @@ export const Route = createFileRoute("/")({
         content:
           "mini escavadeira Capela do Alto, escavações Capela do Alto, terraplanagem Sorocaba, abertura de valas, limpeza de terrenos, escavação para piscina, drenagem, fundações, mini escavadeira Sorocaba, Tatuí, Iperó, Araçoiaba da Serra",
       },
-      { property: "og:title", content: "JR Escavações | Mini Escavadeira em Capela do Alto e Região" },
+      {
+        property: "og:title",
+        content: "JR Escavações | Mini Escavadeira em Capela do Alto e Região",
+      },
       {
         property: "og:description",
         content:
@@ -37,7 +40,10 @@ export const Route = createFileRoute("/")({
       { property: "og:locale", content: "pt_BR" },
       { property: "og:site_name", content: "JR Escavações" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "JR Escavações | Mini Escavadeira em Capela do Alto e Região" },
+      {
+        name: "twitter:title",
+        content: "JR Escavações | Mini Escavadeira em Capela do Alto e Região",
+      },
       {
         name: "twitter:description",
         content:
@@ -106,9 +112,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Início", item: "/" },
-          ],
+          itemListElement: [{ "@type": "ListItem", position: 1, name: "Início", item: "/" }],
         }),
       },
     ],

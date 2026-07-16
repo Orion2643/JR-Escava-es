@@ -23,13 +23,15 @@ export function ServiceArea() {
     <section id="atendimento" className="relative py-24 sm:py-32 surface">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
         <div>
-          <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">Área de atendimento</p>
+          <p className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
+            Área de atendimento
+          </p>
           <h2 className="mt-4 font-display text-4xl sm:text-6xl font-extrabold text-gradient leading-[0.95]">
             Atendemos Capela do Alto e região
           </h2>
           <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
-            Levamos soluções com mini escavadeira para obras residenciais, rurais,
-            comerciais e preparação de terrenos em toda a região.
+            Levamos soluções com mini escavadeira para obras residenciais, rurais, comerciais e
+            preparação de terrenos em toda a região.
           </p>
 
           <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -42,14 +44,16 @@ export function ServiceArea() {
                 transition={{ duration: 0.45, delay: i * 0.05 }}
                 className={`rounded-xl border px-4 py-3.5 flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 ${
                   c.main
-                    ? "border-gold/50 bg-gold/[0.06]"
+                    ? "border-gold/30 bg-gold/[0.035]"
                     : "border-white/10 surface-2 hover:border-primary/40"
                 }`}
               >
                 <MapPin className={`h-5 w-5 shrink-0 ${c.main ? "text-gold" : "text-primary"}`} />
                 <div className="min-w-0">
                   <p className="text-sm font-semibold truncate">{c.name}</p>
-                  <p className="text-[11px] uppercase tracking-widest text-muted-foreground">{c.tag}</p>
+                  <p className="text-[11px] uppercase tracking-widest text-muted-foreground">
+                    {c.tag}
+                  </p>
                 </div>
               </motion.li>
             ))}
@@ -66,7 +70,10 @@ export function ServiceArea() {
           <div className="absolute inset-0 blueprint opacity-70" />
           <div
             className="absolute inset-0"
-            style={{ background: "radial-gradient(circle at 50% 55%, rgba(37,99,235,0.3), transparent 65%)" }}
+            style={{
+              background:
+                "radial-gradient(circle at 50% 55%, rgba(245,179,1,0.12), transparent 65%)",
+            }}
           />
           <div className="absolute inset-0">
             {pins.map((p) => (
@@ -76,8 +83,8 @@ export function ServiceArea() {
                   <span
                     className={`relative block rounded-full ${p.main ? "h-4 w-4" : "h-3 w-3"}`}
                     style={{
-                      background: p.main ? "#F5B301" : "#3B82F6",
-                      boxShadow: `0 0 0 6px ${p.main ? "rgba(245,179,1,0.18)" : "rgba(59,130,246,0.18)"}, 0 0 20px ${p.main ? "#F5B301" : "#3B82F6"}`,
+                      background: p.main ? "#F5B301" : "#F5B301",
+                      boxShadow: `0 0 0 6px ${p.main ? "rgba(245,179,1,0.10)" : "rgba(251,191,36,0.10)"}, 0 0 10px rgba(245,179,1,0.40)`,
                     }}
                   />
                   <span className="absolute left-5 top-1/2 -translate-y-1/2 whitespace-nowrap text-xs font-semibold">

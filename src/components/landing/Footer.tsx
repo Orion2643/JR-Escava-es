@@ -1,5 +1,6 @@
 import { Phone, MapPin, Wrench, MessageCircle, Mail } from "lucide-react";
 import { WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
+import logoJrCompleto from "@/assets/logo-jr-completo.png";
 
 const quickLinks = [
   { href: "#servicos", label: "Serviços" },
@@ -16,21 +17,19 @@ export function Footer() {
     <footer className="relative border-t border-white/[0.06] surface pt-16 pb-8">
       <div
         className="absolute inset-x-0 top-0 h-px"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(59,130,246,0.5), transparent)" }}
+        style={{
+          background: "linear-gradient(90deg, transparent, rgba(251,191,36,0.24), transparent)",
+        }}
       />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="lg:col-span-1">
-          <div className="flex items-center gap-2.5">
-            <span
-              className="grid h-10 w-10 place-items-center rounded-lg"
-              style={{ background: "var(--gradient-cta)" }}
-            >
-              <span className="font-display text-base font-black text-white">JR</span>
-            </span>
-            <span className="font-display text-lg font-bold">
-              JR <span className="text-primary">Escavações</span>
-            </span>
-          </div>
+          <a href="#inicio" aria-label="Voltar ao início">
+            <img
+              src={logoJrCompleto}
+              alt="JR Escavações e Terraplanagem"
+              className="h-28 w-auto max-w-full object-contain object-left"
+            />
+          </a>
           <p className="mt-5 text-sm text-muted-foreground max-w-sm leading-relaxed">
             Mini escavadeira, escavações e terraplanagem com rapidez, precisão e qualidade.
           </p>
@@ -86,7 +85,7 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <MessageCircle className="h-4 w-4 text-primary shrink-0" />
-                <a
+              <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -107,9 +106,21 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} JR Escavações. Todos os direitos reservados.</p>
-        <p>Responsável: Equipe JR Escavações</p>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-muted-foreground">
+        <p>
+          © {new Date().getFullYear()} JR Escavações e Terraplanagem. Todos os direitos reservados.
+        </p>
+        <p>
+          Site desenvolvido por{" "}
+          <a
+            href="https://www.orion-sistemas.info"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-primary hover:text-white transition-colors"
+          >
+            Orion Soluções em Tecnologia
+          </a>
+        </p>
       </div>
     </footer>
   );
