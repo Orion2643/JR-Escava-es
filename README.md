@@ -22,7 +22,6 @@ Site institucional desenvolvido pela **Orion Soluções em Tecnologia** para div
 - Página institucional moderna
 - Design responsivo (Desktop, Tablet e Mobile)
 - Galeria de projetos
-- Formulário inteligente de orçamento
 - Integração com WhatsApp
 - Navegação suave entre seções
 - SEO otimizado
@@ -61,7 +60,7 @@ O projeto será publicado utilizando:
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido exclusivamente para a **J&F Serralheria**.
+Este projeto foi desenvolvido exclusivamente para a **Jr Escavações e terraplanagem**.
 
 Todos os direitos sobre identidade visual, conteúdo e imagens pertencem ao cliente.
 
