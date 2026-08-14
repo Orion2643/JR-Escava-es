@@ -1,12 +1,15 @@
-import { Phone, MapPin, Wrench, MessageCircle, Mail } from "lucide-react";
+import { Phone, MapPin, Wrench, Mail, Star } from "lucide-react";
 import { WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/contact";
+import { SITE } from "@/lib/site";
 import logoJrCompleto from "@/assets/logo-jr-completo.png";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 const quickLinks = [
   { href: "#servicos", label: "Serviços" },
   { href: "#diferenciais", label: "Diferenciais" },
   { href: "#galeria", label: "Galeria" },
   { href: "#atendimento", label: "Atendimento" },
+  { href: "#localizacao", label: "Localização" },
   { href: "#contato", label: "Orçamento" },
 ];
 
@@ -14,7 +17,7 @@ const cities = ["Capela do Alto", "Sorocaba", "Tatuí", "Iperó", "Araçoiaba da
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.06] surface pt-16 pb-8">
+    <footer className="mobile-footer relative border-t border-white/[0.06] surface pt-16 pb-8">
       <div
         className="absolute inset-x-0 top-0 h-px"
         style={{
@@ -39,7 +42,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm btn-neon btn-neon-hover"
           >
-            <MessageCircle className="h-4 w-4" /> Falar no WhatsApp
+            <WhatsAppIcon className="h-4 w-4" /> Falar no WhatsApp
           </a>
         </div>
 
@@ -84,7 +87,7 @@ export function Footer() {
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <MessageCircle className="h-4 w-4 text-primary shrink-0" />
+              <WhatsAppIcon className="h-4 w-4 text-primary shrink-0" />
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
@@ -96,7 +99,27 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-              <span className="text-muted-foreground">Capela do Alto — SP e região</span>
+              <a
+                href={SITE.mapsDirections}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition"
+              >
+                {SITE.address.street}, {SITE.address.number} — {SITE.address.district}
+                <br />
+                {SITE.address.city} — {SITE.address.state}
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <Star className="h-4 w-4 text-primary shrink-0" />
+              <a
+                href={SITE.mapsReviews}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition"
+              >
+                Avaliar no Google
+              </a>
             </li>
             <li className="flex items-center gap-3">
               <Mail className="h-4 w-4 text-primary shrink-0" />

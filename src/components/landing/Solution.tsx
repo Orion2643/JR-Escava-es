@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, MessageCircle } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import impactImg from "@/assets/impact-machine.png";
 import { WHATSAPP_URL } from "@/lib/contact";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 const points = [
   "Acesso em espaços restritos com mínimo impacto no terreno",
@@ -47,7 +48,7 @@ export function Solution() {
             rel="noopener noreferrer"
             className="mobile-cta mt-8 sm:mt-10 inline-flex items-center gap-2.5 rounded-2xl px-7 py-4 text-base btn-neon btn-neon-hover"
           >
-            <MessageCircle className="h-5 w-5" />
+            <WhatsAppIcon className="h-5 w-5" />
             Entre em contato
           </a>
         </motion.div>

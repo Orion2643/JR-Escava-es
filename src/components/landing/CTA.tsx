@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/contact";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 export function CTA() {
   return (
@@ -42,9 +42,9 @@ export function CTA() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-10 inline-flex items-center gap-3 rounded-2xl px-10 py-6 text-lg btn-whatsapp btn-whatsapp-hover "
+              className="mt-10 inline-flex items-center gap-3 rounded-2xl px-10 py-6 text-lg btn-whatsapp btn-whatsapp-hover"
             >
-              <MessageCircle className="h-6 w-6" />
+              <WhatsAppIcon className="h-6 w-6" />
               Solicitar orçamento pelo WhatsApp
             </a>
           </motion.div>

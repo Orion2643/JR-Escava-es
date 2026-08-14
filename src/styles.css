@@ -40,24 +40,24 @@
   --radius: 0.875rem;
 
   /* Palette */
-  --background: #0c1118;
+  --background: #111923;
   --foreground: #ffffff;
-  --surface: #151d29;
-  --surface-2: #1b2533;
+  --surface: #182333;
+  --surface-2: #202d3e;
 
-  --card: #182230;
+  --card: #1b2838;
   --card-foreground: #ffffff;
 
-  --popover: #151d29;
+  --popover: #182333;
   --popover-foreground: #ffffff;
 
   --primary: #d99a00; /* dourado âmbar suave */
   --primary-foreground: #ffffff;
 
-  --secondary: #1b2533;
+  --secondary: #202d3e;
   --secondary-foreground: #ffffff;
 
-  --muted: #151d29;
+  --muted: #182333;
   --muted-foreground: #d8dee8;
 
   --accent: #f5b301; /* dourado luminoso */
@@ -76,8 +76,8 @@
   --gradient-hero:
     radial-gradient(ellipse 60% 50% at 15% 20%, rgba(245, 179, 1, 0.12), transparent 60%),
     radial-gradient(ellipse 50% 40% at 90% 80%, rgba(251, 191, 36, 0.045), transparent 60%),
-    linear-gradient(180deg, #0c1118 0%, #101722 52%, #0c1118 100%);
-  --gradient-panel: linear-gradient(135deg, rgba(27, 37, 51, 0.88), rgba(21, 29, 41, 0.72));
+    linear-gradient(180deg, #111923 0%, #172231 52%, #111923 100%);
+  --gradient-panel: linear-gradient(135deg, rgba(32, 45, 62, 0.9), rgba(24, 35, 51, 0.78));
   --gradient-cta: linear-gradient(135deg, #d99a00 0%, #f5b301 100%);
   --gradient-gold-glow: linear-gradient(135deg, rgba(245, 179, 1, 0.14), rgba(251, 191, 36, 0.022));
   --shadow-neon: 0 0 0 1px rgba(251, 191, 36, 0.16), 0 12px 30px -22px rgba(245, 179, 1, 0.22);
@@ -85,7 +85,7 @@
 }
 
 .dark {
-  --background: #0c1118;
+  --background: #111923;
   --foreground: #ffffff;
 }
 
@@ -95,8 +95,11 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
+    overflow-x: hidden;
+    width: 100%;
     background: var(--gradient-hero);
     background-attachment: fixed;
     color: var(--color-foreground);
@@ -121,6 +124,11 @@
     background: rgba(245, 179, 1, 0.18);
     color: #fff;
   }
+
+  #__root {
+    width: 100%;
+    overflow-x: hidden;
+  }
 }
 
 @utility glass {
@@ -131,7 +139,7 @@
 }
 
 @utility glass-header {
-  background: rgba(12, 17, 24, 0.82);
+  background: rgba(17, 25, 35, 0.86);
   backdrop-filter: blur(20px) saturate(160%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -309,6 +317,12 @@
   filter: brightness(1.14) contrast(1.03) saturate(1.05);
 }
 
+.site-machine-video {
+  display: block;
+  background: #182333;
+  filter: brightness(1.08) contrast(1.03) saturate(1.06);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-excavator-drift,
   .gold-particle {
@@ -354,12 +368,13 @@
   body {
     background:
       radial-gradient(ellipse 90% 34% at 50% 0%, rgba(245, 179, 1, 0.07), transparent 72%),
-      linear-gradient(180deg, #111923 0%, #151f2c 48%, #101722 100%);
+      linear-gradient(180deg, #14202d 0%, #1a2736 48%, #131d29 100%);
   }
 
   .hero-section {
     padding-top: 7.25rem;
     padding-bottom: 4.5rem;
+    overflow-x: clip;
   }
 
   .mobile-section {
@@ -417,6 +432,10 @@
     filter: brightness(1.29) contrast(1.01) saturate(1.05);
   }
 
+  .site-machine-video {
+    filter: brightness(1.12) contrast(1.02) saturate(1.05);
+  }
+
   .btn-neon {
     box-shadow:
       0 0 0 1px rgba(251, 191, 36, 0.35),
@@ -429,10 +448,10 @@
   }
 
   .whatsapp-float {
-    right: 1rem;
-    bottom: calc(1rem + env(safe-area-inset-bottom));
-    width: 3.65rem;
-    height: 3.65rem;
+    right: max(0.75rem, env(safe-area-inset-right));
+    bottom: calc(0.9rem + env(safe-area-inset-bottom));
+    width: 3.45rem;
+    height: 3.45rem;
   }
 
   .mobile-footer {
@@ -447,5 +466,12 @@
 
   .hero-section {
     padding-top: 6.75rem;
+  }
+
+  .whatsapp-float {
+    right: 0.7rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    width: 3.25rem;
+    height: 3.25rem;
   }
 }
